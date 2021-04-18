@@ -7,4 +7,4 @@ I created this code to make in order to work out an AI.
 
 
 # Neuroevolution
-A basic implementation of the generative learning algorithm to make these birds fly better than humans would! 
+A basic implementation of the generative learning algorithm to make these birds fly better than humans would! Press 'l' to load an already evolved bird.
