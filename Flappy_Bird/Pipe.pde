@@ -1,34 +1,35 @@
 class Pipe {
   float x;
-  float w = 75  ;
+  float w = 40;
   float h;
-  float speed = 5;
-  float space = 200;
+  float speed = 15;
+  float space;
   color c;
 
 
 
   Pipe() {
-    x = width + w - 100;
-    h = random(100, height/2);
+    this.x = width + w - 100;
+    this.h = random(0, height/2);
+    this.space = 70;//random(300,225);
   }
 
   boolean hit(Bird b) {
-    if (b.pos.x + b.r>x && b.pos.x - b.r < (x+w)) {
-      if (b.pos.y+b.r < h || b.pos.y-b.r> h+200) {
+    if (b.pos.x + b.r > this.x && b.pos.x - b.r < (this.x+w)) {
+      if (b.pos.y + b.r < this.h || b.pos.y-b.r> this.h + space) {
         return true;
       }
     }
-    return false;
+    return false;    
   }
 
   void show() {
     fill(c);    
     rect(x, 0, w, h);
-    rect(x, h + space, w, height);
+    rect(this.x, this.h + space, this.w, height);
   }
 
-  void move() {
-    x-=speed;
+  void move(float increment) {
+    this.x -= increment;
   }
 }
